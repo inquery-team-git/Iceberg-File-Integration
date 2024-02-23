@@ -33,6 +33,9 @@ RUN poetry install --no-dev --no-interaction --no-ansi
 # Copy the rest of your application code
 COPY . /app
 
+# Clean and compile the java code
+RUN mvn clean && mvn compile
+
 # Make port 80 available to the world outside this container
 EXPOSE 80
 
